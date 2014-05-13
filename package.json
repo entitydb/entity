@@ -4,7 +4,9 @@
   "description": "a entity for entitydb",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/**/*.js"
+    "test": "mocha --recursive test",
+    "coverage": "rm -rf coverage; istanbul cover _mocha -- --recursive --reporter spec --bail",
+    "publish-coverage": "cat coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -33,7 +35,9 @@
     "chai": "^1.9.1",
     "mocha": "^1.18.2",
     "testling": "^1.6.1",
-    "level-test": "^1.6.2"
+    "level-test": "^1.6.2",
+    "coveralls": "^2.10.0",
+    "istanbul": "^0.2.9"
   },
   "testling": {
     "harness": "mocha",
