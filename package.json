@@ -1,6 +1,6 @@
 {
   "name": "entitydb-entity",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "a entity for entitydb",
   "main": "index.js",
   "scripts": {
