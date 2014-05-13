@@ -26,8 +26,8 @@
   "homepage": "https://github.com/entitydb/entity",
   "dependencies": {
     "simple-extend": "^0.1.0",
-    "mschema-rpc": "^0.5.1",
-    "mschema": "^0.5.2",
+    "mschema-rpc": "git://github.com/entitydb/mschema-rpc",
+    "mschema": "git://github.com/entitydb/mschema",
     "lodash": "^2.4.1",
     "merge-defaults": "^0.1.0"
   },
