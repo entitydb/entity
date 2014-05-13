@@ -1,0 +1,52 @@
+{
+  "name": "entitydb-entity",
+  "version": "0.1.0",
+  "description": "a entity for entitydb",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/entitydb/entity.git"
+  },
+  "keywords": [
+    "entity",
+    "entitydb",
+    "model",
+    "controller"
+  ],
+  "author": "entitydb",
+  "license": "AGPLv3",
+  "bugs": {
+    "url": "https://github.com/entitydb/entity/issues"
+  },
+  "homepage": "https://github.com/entitydb/entity",
+  "dependencies": {
+    "simple-extend": "^0.1.0",
+    "mschema-rpc": "^0.5.1",
+    "mschema": "^0.5.2",
+    "lodash": "^2.4.1",
+    "merge-defaults": "^0.1.0"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "mocha": "^1.18.2",
+    "testling": "^1.6.1",
+    "level-test": "^1.6.2"
+  },
+  "testling": {
+    "harness": "mocha",
+    "files": "test/**/*.js",
+    "browsers": [
+      "ie/9..latest",
+      "chrome/25..latest",
+      "firefox/20.latest",
+      "opera/15..latest",
+      "safari/6..latest",
+      "iphone/6..latest",
+      "ipad/6..latest",
+      "android-browser/4.2..latest"
+    ]
+  }
+}
