@@ -1,5 +1,6 @@
 var expect = require('chai').expect;
 var _ = require('lodash');
+require('longjohn');
 
 var Entity;
 var entity;
@@ -23,14 +24,16 @@ describe("Entity", function () {
 
     creatureSchema = {
       type: "Creature",
-      properties: {
-        name: {
-          type: "string",
-          required: true,
-        },
-        food: {
-          enum: ["kale", "quinoa", "spinach"],
-          default: "kale",
+      object: {
+        properties: {
+          name: {
+            type: "string",
+            required: true,
+          },
+          food: {
+            type: "string",
+            enum: ["kale", "quinoa", "spinach"],
+          },
         },
       },
       methods: {
@@ -41,9 +44,11 @@ describe("Entity", function () {
         },
         greet: {
           input: {
-            otherName: {
-              type: "string",
-              required: true,
+            properties: {
+              otherName: {
+                type: "string",
+                required: true,
+              },
             },
           },
           fn: function (otherName, callback) {
@@ -52,12 +57,12 @@ describe("Entity", function () {
           },
         },
       },
-      config: {},
     };
 
     Creature = Entity.extend(creatureSchema);
+
     expect(Creature).to.exist;
-    expect(Creature.prototype.properties).to.deep.equal(creatureSchema.properties);
+    expect(Creature.prototype.object).to.deep.equal(creatureSchema.object);
     expect(Creature.prototype.methods).to.deep.equal(creatureSchema.methods);
     _.each(creatureSchema.methods, function (method, name) {
       expect(Creature.prototype[name]).to.exist;
@@ -67,7 +72,7 @@ describe("Entity", function () {
   it("should create creature", function () {
     creature = new Creature();
 
-    expect(creature.properties).to.deep.equal(creatureSchema.properties);
+    expect(creature.object).to.deep.equal(creatureSchema.object);
     expect(creature.methods).to.deep.equal(creatureSchema.methods);
     _.each(creatureSchema.methods, function (method, name) {
       expect(creature[name]).to.exist;

@@ -29,7 +29,8 @@
     "mschema-rpc": "git://github.com/entitydb/mschema-rpc",
     "mschema": "git://github.com/entitydb/mschema",
     "lodash": "^2.4.1",
-    "merge-defaults": "^0.1.0"
+    "merge-defaults": "^0.1.0",
+    "entitydb-type": "git://github.com/entitydb/type"
   },
   "devDependencies": {
     "chai": "^1.9.1",
@@ -37,7 +38,8 @@
     "testling": "^1.6.1",
     "level-test": "^1.6.2",
     "coveralls": "^2.10.0",
-    "istanbul": "^0.2.9"
+    "istanbul": "^0.2.9",
+    "longjohn": "^0.2.4"
   },
   "testling": {
     "harness": "mocha",
